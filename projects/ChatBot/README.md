@@ -24,10 +24,10 @@ Telegram-бот с webhook, интеграцией OpenRouter и хранени�
 ```bash
 copy ChatBot\appsettings.Development.json.example ChatBot\appsettings.Development.json
 ```
+ 
 
-Заполните в `appsettings.Development.json`:
-- `Telegram:BotToken` — токен от @BotFather
-- `ChatApi:ApiKey` — ключ с [openrouter.ai/keys](https://openrouter.ai/keys)
+- `Telegram:BotToken` — токен от @BotFather (8781642227:AAELlMriNHN5xno_GexlnSLWiuypRVC36Pc)
+- `ChatApi:ApiKey` — ключ с [ключ](https://openrouter.ai/keys) 
 
 ### 2. Как запускаеться и работает бот терменале povershell?
 
