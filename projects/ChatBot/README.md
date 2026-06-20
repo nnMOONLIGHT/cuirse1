@@ -29,7 +29,7 @@ copy ChatBot\appsettings.Development.json.example ChatBot\appsettings.Developmen
 - `Telegram:BotToken` — токен от @BotFather
 - `ChatApi:ApiKey` — ключ с [openrouter.ai/keys](https://openrouter.ai/keys)
 
-### 2. Запуск приложения
+### 2. Как запускаеться и работает бот терменале povershell?
 
 ```bash
 cd ChatBot
@@ -55,13 +55,13 @@ ngrok http 5080
 ### 4. Установка webhook
 
 ```bash
-curl "https://api.telegram.org/bot<TOKEN>/setWebhook?url=https://<tunnel-url>/api/update"
+curl "https://api.telegram.org/bot<8781642227:AAELlMriNHN5xno_GexlnSLWiuypRVC36Pc>/setWebhook?url=https://<tunnel-url>/api/update"
 ```
 
 Проверка:
 
 ```bash
-curl "https://api.telegram.org/bot<TOKEN>/getWebhookInfo"
+curl "https://api.telegram.org/bot<8781642227:AAELlMriNHN5xno_GexlnSLWiuypRVC36Pc>/getWebhookInfo"
 ```
 
 ## Структура проекта
@@ -91,5 +91,5 @@ ChatBot/
 | `/system <текст>` | Задать системный промпт для стиля ответов |
 
 ## Автор
-
-Учебный проект — курс ASP.NET Core.
+Гутман Анастасия
+Учебный проект 
