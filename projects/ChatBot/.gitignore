@@ -25,3 +25,6 @@ desktop.ini
 ## IDE
 .idea/
 .vscode/
+
+## Tunnel binary
+scripts/cloudflared.exe
