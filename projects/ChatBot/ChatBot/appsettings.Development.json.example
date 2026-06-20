@@ -1,0 +1,14 @@
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Debug",
+      "Microsoft.AspNetCore": "Information"
+    }
+  },
+  "Telegram": {
+    "BotToken": "ВАШ_ТОКЕН_БОТА"
+  },
+  "ChatApi": {
+    "ApiKey": "ВАШ_КЛЮЧ_OPENROUTER"
+  }
+}

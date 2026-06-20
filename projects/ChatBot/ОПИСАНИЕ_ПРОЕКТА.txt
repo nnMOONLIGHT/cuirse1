@@ -1,0 +1,64 @@
+ОПИСАНИЕ ПРОЕКТА: CuirseBot
+============================
+
+Название: CuirseBot
+Платформа: ASP.NET Core 8.0
+Telegram: @Cuirsebot (https://t.me/Cuirsebot)
+Репозиторий: https://github.com/nnMOONLIGHT/cuirse1
+
+ЦЕЛЬ ПРОЕКТА
+------------
+Разработать Telegram-бота, который принимает сообщения пользователя через webhook,
+сохраняет историю диалога, отправляет контекст в языковую модель через OpenRouter
+и возвращает ответ пользователю на русском языке.
+
+РЕАЛИЗОВАННАЯ ФУНКЦИОНАЛЬНОСТЬ
+------------------------------
+
+1. Webhook и приём Update
+   - Контроллер POST /api/update принимает JSON Update от Telegram Bot API
+   - Приложение запускается локально, доступ из интернета через localtunnel/ngrok
+
+2. Интеграция с OpenRouter
+   - Настройки ChatApiSettings читаются через IOptions из appsettings.json
+   - HttpChatApiClient зарегистрирован через HttpClientFactory
+   - Запросы отправляются на https://openrouter.ai/api/v1/chat/completions
+
+3. Команды бота
+   - /start  — приветствие и краткая инструкция
+   - /help   — список команд, пояснение про отправку текста в LLM
+   - /stats  — количество сообщений в истории и потраченных токенов
+   - /clear  — очистка истории текущего чата
+   - /summarize — краткий пересказ диалога через LLM
+   - /undo   — удаление последней пары сообщений (user + assistant)
+
+4. Хранение истории и передача контекста
+   - InMemoryChatRepository хранит сообщения по chatId
+   - При обычном сообщении: user → история → OpenRouter → assistant → Telegram
+   - Сохраняется выбранная модель (по умолчанию openai/gpt-4o-mini)
+
+5. Дополнительная функциональность
+   - /system <текст> — добавление системного сообщения (role=system) в историю,
+     влияет на стиль и поведение последующих ответов модели
+
+АРХИТЕКТУРА
+-----------
+- UpdateController — точка входа webhook
+- UpdateHandler — маршрутизация команд и обработка текста
+- InMemoryChatRepository — хранение сессий чатов в ConcurrentDictionary
+- HttpChatApiClient — HTTP-клиент для OpenRouter API
+- TelegramClient — отправка ответов через Telegram Bot API
+
+ЗАПУСК И ДЕМОНСТРАЦИЯ
+---------------------
+1. Заполнить appsettings.Development.json (токен бота и ключ OpenRouter)
+2. dotnet run в папке ChatBot
+3. Запустить localtunnel: npx localtunnel --port 5080
+4. Установить webhook на URL туннеля + /api/update
+5. Написать боту @Cuirsebot в Telegram
+
+Для защиты проекта показать:
+- /start и /help
+- Обычный диалог с ботом (контекст сохраняется)
+- /stats, /summarize, /undo, /clear
+- /system с изменением стиля ответов

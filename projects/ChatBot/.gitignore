@@ -1,0 +1,27 @@
+## Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+## Visual Studio
+.vs/
+*.user
+*.suo
+
+## Secrets — не коммитить токены!
+appsettings.Development.json
+appsettings.Local.json
+*.env
+
+## OS
+Thumbs.db
+desktop.ini
+
+## IDE
+.idea/
+.vscode/
