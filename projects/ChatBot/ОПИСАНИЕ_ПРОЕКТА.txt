@@ -49,16 +49,5 @@ Telegram: @Cuirsebot (https://t.me/Cuirsebot)
 - HttpChatApiClient — HTTP-клиент для OpenRouter API
 - TelegramClient — отправка ответов через Telegram Bot API
 
-ЗАПУСК И ДЕМОНСТРАЦИЯ
----------------------
-1. Заполнить appsettings.Development.json (токен бота и ключ OpenRouter)
-2. dotnet run в папке ChatBot
-3. Запустить localtunnel: npx localtunnel --port 5080
-4. Установить webhook на URL туннеля + /api/update
-5. Написать боту @Cuirsebot в Telegram
 
-Для защиты проекта показать:
-- /start и /help
-- Обычный диалог с ботом (контекст сохраняется)
-- /stats, /summarize, /undo, /clear
-- /system с изменением стиля ответов
+
