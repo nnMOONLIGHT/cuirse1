@@ -6,9 +6,9 @@
     }
   },
   "Telegram": {
-    "BotToken": "ВАШ_ТОКЕН_БОТА"
+    "BotToken": "8781642227:AAELlMriNHN5xno_GexlnSLWiuypRVC36Pc"
   },
   "ChatApi": {
-    "ApiKey": "ВАШ_КЛЮЧ_OPENROUTER"
+    "ApiKey": "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"
   }
 }
